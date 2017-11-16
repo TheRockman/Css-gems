@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Gems</title>
+</head>
+<body>
+  <div ng-controller="mainCtrl">
+    <div class="row">
+      <div class="flex">
+
+        <div tabindex="0" class="gem">
+          <div class="face one"></div>
+          <div class="face two"></div>
+          <div class="face three"></div>
+          <div class="face four"></div>
+          <div class="face five"></div>
+          <div class="face six"></div>
+          <div class="gem cap">
+            <div class="glint"></div>
+          </div>
+        </div>
+
+        <div tabindex="0" class="gem amber">
+          <div class="face one"></div>
+          <div class="face two"></div>
+          <div class="face three"></div>
+          <div class="face four"></div>
+          <div class="face five"></div>
+          <div class="face six"></div>
+          <div class="gem cap">
+            <div class="glint"></div>
+          </div>
+        </div>
+
+        <div tabindex="0" class="gem emerald">
+          <div class="face one"></div>
+          <div class="face two"></div>
+          <div class="face three"></div>
+          <div class="face four"></div>
+          <div class="face five"></div>
+          <div class="face six"></div>
+          <div class="gem cap">
+            <div class="glint"></div>
+          </div>
+        </div>
+
+        <div tabindex="0" class="gem rainbow">
+          <div class="face one"></div>
+          <div class="face two"></div>
+          <div class="face three"></div>
+          <div class="face four"></div>
+          <div class="face five"></div>
+          <div class="face six"></div>
+          <div class="gem cap">
+            <div class="glint"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <style media="screen">
+  @font-face {
+    font-family: 'Roboto';
+    src: url('roboto.eot');
+    src: url('roboto.eot?#iefix') format('embedded-opentype'),
+    url('roboto.svg#svgFontName') format('svg');
+  }
+
+  body{
+    margin: 0;
+    background: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+  }
+
+  .gem:focus{
+    transform: scale(1);
+  }
+
+  .gem{
+    transform: scale(0.5);
+    transition: 1s all ease;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    background: dodgerblue;
+    transform-origin: center;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
+  }
+
+  .face{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom right;
+  }
+  .one{
+    transform: rotate(60deg);
+    background: #a2d1ff;
+    z-index: 7;
+  }
+  .two{
+    transform: rotate(120deg);
+    background: #5aaeff;
+    z-index: 6;
+  }
+  .three{
+    transform: rotate(180deg);
+    background: dodgerblue;
+    z-index: 5;
+  }
+  .four{
+    transform: rotate(240deg);
+    background: dodgerblue;
+    z-index: 4;
+  }
+  .five{
+    transform: rotate(300deg);
+    background: #5aaeff;
+    z-index: 3;
+  }
+  .six{
+    transform: rotate(360deg);
+    background: #a2d1ff;
+    z-index: 2;
+  }
+
+  .cap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background: #cbe6ff;
+    transform: scale(0.6);
+  }
+
+  .glint{
+    background: white;
+    width: 25px;
+    height: 250px;
+    position: absolute;
+    left:50%;
+    top: -15%;
+    transform-origin: bottom;
+    transform: rotate(30deg);
+    transition: 2s all ease;
+  }
+
+  .gem:hover .glint{
+    left: -100%;
+  }
+
+  .amber{
+    filter: hue-rotate(180deg);
+  }
+
+  .emerald{
+    filter: hue-rotate(-90deg);
+  }
+
+  .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  }
+  .flex {
+  flex-basis: 100%;
+  }
+  @media screen and (min-width: 800px) {
+  .flex {
+  flex: 1;
+  }
+  }
+  /*Animation*/
+  @keyframes rainbow {
+    from {filter:hue-rotate(0deg)}
+    to {filter: hue-rotate(360deg)}
+  }
+  .rainbow {
+    animation-name: rainbow;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  </style>
+</body>
+
+</html>
